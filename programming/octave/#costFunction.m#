@@ -1,0 +1,17 @@
+BOBOBOB
+function J = costFunction( X, y, theta )
+% X holds matrix with training examples
+% y expected output
+% theta
+
+% number of training samples 
+m = size(X,1);
+
+% predictions of hypothesis for all m samples
+predictions=X*theta;
+
+% squared error
+sqrErrors=(predictions-y).^2;
+
+J = 1 / ( 2 * m ) * sum(sqrErrors);
+
