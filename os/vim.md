@@ -1,3 +1,29 @@
+Navigation
+--------------------
+
+# end/begin next word
+Shift + E/B
+
+# show/no show whole line on screen
+:set nowrap
+:set wrap
+
+
+Hexadecimal
+----------------------
+
+Relays on the xdd command
+
+# open file in hexadecimal
+:%!xxd
+
+# show in octets
+:%!xxd -c
+
+# go back to text mode
+:%!xxd -t
+
+ 
 
 Plugins Management
 ------------------------------
