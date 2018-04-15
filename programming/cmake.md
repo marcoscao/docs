@@ -1,0 +1,20 @@
+CMake
+=====
+
+```cmake
+
+exec_program( ant ARGS get-deps OUTPUT_VARIABLE ant_log )
+
+
+
+# Iterate over a string
+
+file(GLOB files "fixtures/*.ext")
+foreach(file ${files})
+  ... calculate ${i} to get the test name
+  add_test(validate_${i}, "validator", ${file})
+endforeach()
+
+```
+
+

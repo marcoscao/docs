@@ -1,0 +1,135 @@
+GUITAR
+======
+
+
+## Cambiar Cuerdas
+
+Método orientado a la Les Paul
+
+* Posicionar agujero clavija paralelo a la cejuela ( es decir transversal al mastil )
+
+* Pasar cuerda desde interior hacia afuera y en esta primera fase dejarla tensa para implementar luego la holgura.
+
+* Dejar holgura, la cual irá de más a menos holgura empezando en cada grupo de 3 cuerdas, es decir:
+   En el grupo ( 1ª, 2ª y 3ª ( E,B,G ) ) la primera debiera dar mas vueltas tener mas holgura que la 3ª
+   ( Según unos videos dejar aprox de holgura hasta el 5-6 traste. Llevando con los dedos desde la clavija a ese traste.
+   Las siguientes cuerdas ir bajando de 0.5 en 0.5 la holgura
+
+   En el grupo entorchadas ( 4ª, 5ª, 6ª, DAE ), el mismo procedimiento pero con menos holgura.
+   Sobre 3 trastes aprox para la 4ª y luego ir bajando de 0.5 en 0.5
+
+* Bien, con la holgura establecida presionamos con los dedos a la altura de la clavija la sección de la cuerda interior, 
+  la que viene hacia el mastil, para no perder la holgura y a la vez marcamos el resto de cuerda que sale de la clavija.
+   Nota: creo que mejor doblar ese trocito hacia arriba, en la version anterior lo hice hacia abajo.
+  De esta forma queda mas o menos marcada la cuerda y empezamos a girar hacia arriba, manteniendo la parte interior cogida
+  con los dedos para ir relajando poco a poco a medida que vamos tensando.
+
+* Cuando estamos creando estas vueltas si es posible una por encima del agujero bien, sino por debajo como el resto.
+  Esto para evitar tensión en el cilindro y destinaciones, las vueltas por debajo y sin montarse entre ellas.
+
+* Al final deberían quedar muchas menos vueltas en las entorchadas, creo que sobre 2 aprox en la 6ª
+
+* Si tenemos pocas vueltas muy malo y muchas también, por eso se trata de buscar el equilibrio con las holguras previas.
+
+* Una vez listo afinar y volver a ir afinando en un par o tres de ocasiones.
+
+* Con temperaturas y estados similares de la guitarra este método he conseguido afinaciones muy estables en el tiempo.
+
+
+
+
+## Progresiones Acordes
+
+I V vi IV		: popular rock y pop
+
+I III IV V		: baladas rock
+
+I IV V			: tipica blues y rock
+
+I VI IV V		: la llamada doo-wop
+
+V IV I			: otra variante rock
+
+
+
+ 
+## Componer
+
+Intro + Verso + Estrib. + Verso + Estrib + Puente + Verso + Estrib
+
+Puente : podría usarse una inversion para dar color, un solo con inversion, etc…
+
+
+Por ejemplo una progresion:
+
+I V VIm IV
+
+y luego inversion para darle toque en el segundo estribillo
+La inversion es misma progresión pero tomando la Vim como tónica
+
+
+ejemplo:
+
+SOL - RE - mi - DO
+inversion: mi - si - DO - la
+
+
+
+
+
+## Repertorio
+
+* Mar adentro
+  
+  Notas:
+  	A#sus	: mover los dedos 3 y 4 en posicion acorde F a misma posicion pero 
+		  una cuerda menos cada uno
+
+	- Intro : 	Dm  F  A#sus  Am
+
+	- Verse	 : 	Dm  F  A#sus  Am     x4
+
+	    Cambio 1 :   Dm Am x2
+
+	    Coro     :   C  Em  G
+
+
+* Losing my religion, REM 
+	
+	- Intro Chords + Punteo
+	- Verso Chords
+	- Chorus Chords
+
+
+* Radar Love, Golden Earring
+
+	- Riff inicio
+	- Riff versos + chord
+
+
+* Another brick, Pink Floyd
+
+	- Chords
+
+
+* One, U2
+	- Version con chords-punteo a lo largo mastil
+	- Version con chords acompañamiento
+
+
+
+
+## Pending
+
+* In the still of the night
+
+* Total eclipse of the heart
+
+
+
+
+
+
+
+
+
