@@ -46,6 +46,18 @@ t=[1:0.01:0.98]
 # creates column vector ( 3x1 )
 c=[1; 2; 3]
 
+# creates from another
+	d=[1 2;3 4; 5 6]
+
+	# creates another from first column
+	X=(:,1)							
+
+	# creates another from second column
+	y=(:,2)							
+
+# creates matrix adding column of ones from another existing matrix
+X=[ ones(3,1), data(:,1) ]
+
 # identity ( diagonal matrix )
 eye(4)
 
