@@ -25,13 +25,29 @@ sigma = zeros(1, size(X, 2));
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
+[rows,cols]=size(X);
+%mu = mean(X,1);
+sigma = std(X,1);
 
+for i=1:cols
+	mu(i) = sum(X(:,i)) / rows;
+	%sigma(i) = max(X(:,i)) - min(X(:,i));
 
+	% disp(feature_sum);
+	X_norm(:,i) = X(:,i) .- mu(i);
+	X_norm(:,i) = X_norm(:,i) ./ sigma(i);
 
+	%disp("--------------------------------------------------");
+	disp("Feature i: Mean and Standard Deviation");
+	disp(mu(i));
+	disp(sigma(i));
 
-
-
-
+	disp("Training example 2, feature i. Real value and normalized one");
+	disp(X(2,i));
+	disp(X_norm(2,i));
+	disp(" ");
+	%disp("--------------------------------------------------");
+end
 
 
 % ============================================================
