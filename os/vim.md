@@ -23,6 +23,18 @@ Relays on the xdd command
 # go back to text mode
 :%!xxd -t
 
+
+
+Miscelanean
+--------------------------------------------------------
+
+# Insert same text at the begining of each line
+    1. Ctrl + V
+    2. Select column
+    3. shift + i
+    4. <enter desired text>
+    5. Esc and wait a pair of seconds
+
  
 
 Plugins Management
@@ -116,5 +128,12 @@ Ctrl + w + q	-> close split window
 	m				: over an item opens a menu ( create, copy, rename, ... ) 
 
 ```
+
+
+To classify
+-------------------------------------------------
+
+
+
 
 
