@@ -13,9 +13,9 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-pred = X*theta;
+h = X*theta;
 %disp(pred);
-sqrerr = (pred - y).^2;
+sqrerr = (h - y).^2;
 %disp(sqr_err)
 J = 1/(2*m) * sum(sqrerr);
 

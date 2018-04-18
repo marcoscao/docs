@@ -14,7 +14,24 @@ J = 0;
 %               You should set J to the cost.
 
 
+% add ones column if features is below theta parameters in one
+features = size(X,2);
+if( features == 1 )
+	X=[ones(size(X,1),1) X];
+endif
 
+
+h=X*theta;
+
+% computing J using the usual way
+J1=1/(2*m)*sum( (h-y).^2);
+
+% computing J using matrix multiplication ( see ex1.pdf )
+a=(h-y)'*(h-y);
+J=1/(2*m)*a;
+
+%disp(J1);
+%disp(J2);
 
 
 % =========================================================================

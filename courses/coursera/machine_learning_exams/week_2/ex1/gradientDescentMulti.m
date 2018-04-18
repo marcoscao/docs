@@ -18,10 +18,12 @@ for iter = 1:num_iters
     %
 
 
+	h=theta*X;
+
+	J_history(iter) = (1/m) * alpha * sum( (h-y)'*X(:,iter));
 
 
-
-
+	
 
 
 
