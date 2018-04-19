@@ -9,8 +9,11 @@ theta = zeros(size(X, 2), 1);
 % Instructions: Complete the code to compute the closed form solution
 %               to linear regression and put the result in theta.
 %
-X=[ones(size(X,1),1) X];
-theta=pinv(X'*X)*X'*y;
+
+
+% ones's column already included
+
+theta=( pinv(X'*X) ) * X' * y;
 
 % ---------------------- Sample Solution ----------------------
 
