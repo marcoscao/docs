@@ -1,0 +1,408 @@
+Neural Networks:
+Representation
+
+Non-linear
+hypotheses
+Machine Learning
+
+Non-linear Classification
+
+x2
+
+x1
+
+size
+# bedrooms
+# floors
+age
+Andrew Ng
+
+What is this?
+You see this:
+
+But the camera sees this:
+
+Andrew Ng
+
+Computer Vision: Car detection
+
+Not a car
+
+Cars
+
+Testing:
+
+What is this?
+Andrew Ng
+
+pixel 1
+
+Learning
+Algorithm
+pixel 2
+Raw image
+pixel 2
+
+Cars
+“Non”-Cars
+
+pixel 1
+Andrew Ng
+
+pixel 1
+
+Learning
+Algorithm
+pixel 2
+Raw image
+pixel 2
+
+Cars
+“Non”-Cars
+
+pixel 1
+Andrew Ng
+
+pixel 1
+
+Learning
+Algorithm
+pixel 2
+
+50 x 50 pixel images→ 2500 pixels
+(7500 if RGB)
+
+Raw image
+pixel 2
+
+pixel 1 intensity
+pixel 2 intensity
+
+pixel 2500 intensity
+
+Cars
+“Non”-Cars
+
+pixel 1
+
+Quadratic features (
+
+): ≈3 million
+features
+Andrew Ng
+
+Neural Networks:
+Representation
+
+Neurons and
+the brain
+Machine Learning
+
+Neural Networks
+Origins: Algorithms that try to mimic the brain.
+Was very widely used in 80s and early 90s; popularity
+diminished in late 90s.
+Recent resurgence: State-of-the-art technique for many
+applications
+
+Andrew Ng
+
+The “one learning algorithm” hypothesis
+
+Auditory Cortex
+
+Auditory cortex learns to see
+
+[Roe et al., 1992]
+
+Andrew Ng
+
+The “one learning algorithm” hypothesis
+
+Somatosensory Cortex
+
+Somatosensory cortex learns to see
+
+[Metin & Frost, 1989]
+
+Andrew Ng
+
+Sensor representations in the brain
+
+Seeing with your tongue
+
+Human echolocation (sonar)
+
+Haptic belt: Direction sense
+[BrainPort; Welsh & Blasch, 1997; Nagel et al., 2005; Constantine-Paton & Law, 2009]
+
+Implanting a 3rd eye
+Andrew Ng
+
+Neural Networks:
+Representation
+
+Model
+representation I
+Machine Learning
+
+Neuron in the brain
+
+Andrew Ng
+
+Neurons in the brain
+
+[Credit: US National Institutes of Health, National Institute on Aging]
+
+Andrew Ng
+
+Neuron model: Logistic unit
+
+Sigmoid (logistic) activation function.
+Andrew Ng
+
+Neural Network
+
+Layer 1
+
+Layer 2
+
+Layer 3
+Andrew Ng
+
+Neural Network
+
+“activation” of unit in layer
+matrix of weights controlling
+function mapping from layer to
+layer
+
+If network has units in layer ,
+will be of dimension
+
+units in layer
+
+, then
+
+.
+Andrew Ng
+
+Neural Networks:
+Representation
+
+Model
+representation II
+Machine Learning
+
+Forward propagation: Vectorized implementation
+
+Add
+
+.
+
+Andrew Ng
+
+Neural Network learning its own features
+
+Layer 1
+
+Layer 2
+
+Layer 3
+
+Andrew Ng
+
+Other network architectures
+
+Layer 1
+
+Layer 2
+
+Layer 3
+
+Layer 4
+
+Andrew Ng
+
+Neural Networks:
+Representation
+
+Examples and
+intuitions I
+Machine Learning
+
+Non-linear classification example: XOR/XNOR
+, are binary (0 or 1).
+x2
+
+x2
+
+x1
+x1
+
+Andrew Ng
+
+Simple example: AND
+
+1.0
+
+0
+0
+1
+1
+
+0
+1
+0
+1
+
+Andrew Ng
+
+Example: OR function
+
+-10
+20
+20
+
+0
+0
+1
+1
+
+0
+1
+0
+1
+
+Andrew Ng
+
+Neural Networks:
+Representation
+
+Examples and
+intuitions II
+Machine Learning
+
+Negation:
+
+0
+1
+
+Andrew Ng
+
+Putting it together:
+-30
+
+10
+
+-10
+
+20
+
+-20
+
+20
+
+20
+
+-20
+
+20
+
+0
+0
+1
+1
+
+0
+1
+0
+1
+Andrew Ng
+
+Neural Network intuition
+
+Layer 1
+
+Layer 2
+
+Layer 3
+
+Layer 4
+
+Andrew Ng
+
+Handwritten digit classification
+
+[Courtesy of Yann LeCun]
+
+Andrew Ng
+
+Handwritten digit classification
+
+[Courtesy of Yann LeCun]
+
+Andrew Ng
+
+Andrew Ng
+
+Neural Networks:
+Representation
+
+Multi-class
+classification
+Machine Learning
+Andrew Ng
+
+Multiple output units: One-vs-all.
+
+Pedestrian
+
+Want
+
+Car
+
+,
+
+when pedestrian
+
+Motorcycle
+
+,
+when car
+
+Truck
+
+, etc.
+when motorcycle
+Andrew Ng
+
+Multiple output units: One-vs-all.
+
+Want
+
+,
+
+when pedestrian
+
+,
+when car
+
+, etc.
+when motorcycle
+
+Training set:
+one of
+
+,
+
+,
+
+,
+
+pedestrian car motorcycle truck
+Andrew Ng
+
+Andrew Ng
+
+

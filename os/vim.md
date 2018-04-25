@@ -51,6 +51,8 @@ Plugins Management
 
 
 
+
+
 General Tips
 ------------------------------
 
@@ -58,6 +60,8 @@ General Tips
 :scriptnames         " loaded vim files
 :ol
 :bro ol              " browse old open files
+
+
 
 Vim
 ===

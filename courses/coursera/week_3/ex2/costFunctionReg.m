@@ -18,9 +18,21 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 
 
+h=sigmoid(X*theta);
 
+% theta without term zero ( item 1 due to octave indexing start )
+theta_reg=theta(2:end);
 
+J= (1/m) * (-y'* log(h) - (1-y)'* log(1-h) );
 
+% discards theta(1) the zero theta item from the regularization equation
+J=J + (lambda/(2*m)) * sum( theta_reg.^2 );
+
+grad_op=(1/m)*( X'*(h-y));
+grad=grad_op + ((lambda/m)*theta);
+
+% set zero theta gradient ( indexed as 1 in octave ) to grad zero without being regularized
+grad(1,1)=grad_op(1,1);
 
 % =============================================================
 
