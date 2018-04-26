@@ -36,22 +36,32 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
-disp(size(theta));
-disp(size(X));
 
 h=sigmoid(X*theta);
-disp(h);
-
-disp("-----------");
-disp(size(y));
 
 J=(1/m)*(-y' * log(h) - (1 - y)'*log( 1-h ) );
-disp(size(J));
-disp(J);
+theta_mod=theta(2:end);
 
-grad=(1/m) .* ( (h-y)' * X );
-disp(grad);
+J=J+( lambda/(2*m) * sum( theta_mod .^2 ) );
+%disp("-----------");
 
+%disp("X size");
+%disp(size(X));
+%disp("h(x)");
+%disp(h);
+%disp("J size");
+%disp(size(J));
+%disp("theta size");
+%disp(size(theta));
+%disp("theta-mod size");
+%disp(size(theta_mod));
+%disp("J values");
+%disp(J);
+
+grad_tmp=(1/m)*( X'*(h-y));
+grad=grad_tmp + ( (lambda/m)*theta);
+%disp(grad);
+grad(1,1)=grad_tmp(1,1);
 
 
 % =============================================================
