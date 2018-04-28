@@ -29,12 +29,31 @@ X = [ones(m, 1) X];
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
 %       
+fprintf('\n--- Doing predictions for %d used training examples...',m);
 
+for i=1:m
 
+	pred = [zeros(num_labels,1)];
 
+	for c=1:num_labels
+		%h=sigmoid(X(721,:)*all_theta(c,:)');
 
+		% calculate sample prediction ( value near 1 ) for each classification ( handwrite number 1..10,0 ) 
+		h=sigmoid(X(i,:)*all_theta(c,:)');
+		%pred(c)=max( sigmoid(X(500,:)*all_theta(c,:)') );
+		pred(c)=h;
+		%fprintf('\nClass %d : h= %f',c,h);
+	end
+		%pred=max( p ); %sigmoid(X(1,:)*all_theta(c,:)') );
 
+		% storing best prediction for current trainig sample
+		[max_val max_class] = max(pred);
+		p(i)=max_class;
+		%fprintf('\n Max value: %f  Class: %d\n', max_val, max_class );
+end
 
+%disp( X(32,:));
+%displayData(X(32,:),20);
 
 % =========================================================================
 

@@ -53,9 +53,11 @@ disp("------------------ oneVsAll --------------------");
 
 disp("size(X)");
 disp(size(X));
+%disp(X);
 
-disp("size(y,)");
+disp("size(y)");
 disp(size(y));
+%disp(y);
 
 disp("num_labels");
 disp(num_labels);
@@ -64,7 +66,7 @@ disp(num_labels);
 for c=1:num_labels
 	initial_theta=zeros(n+1,1);
 	options=optimset('GradObj','on','MaxIter',50);
-	x_theta = fmincg (@(t)( lrCostFunction( t, X, (y==c), lambda) ), initial_theta, options );
+	all_theta(c,:) = fmincg (@(t)( lrCostFunction( t, X, (y==c), lambda) ), initial_theta, options );
 	%disp("iteration, theta values");
 	%disp(size(x_theta));
 end
