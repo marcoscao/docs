@@ -61,6 +61,7 @@ Theta2_grad = zeros(size(Theta2));
 %               the regularization separately and then add them to Theta1_grad
 %               and Theta2_grad from Part 2.
 %
+
 X=[ones(m,1) X];
 
 z2=X*Theta1';
@@ -73,10 +74,11 @@ a3=sigmoid(z3);
 h=a3;
 
 
+% transform y output layer values to a classification vector( ex: [ 0 0 0 1 0 0 0 0 0 ]
 y = [1:num_labels] == y;
 
-%J=(1/m2) .* sum( -y_m' * log(h) - ( 1 - y_m)' * log(1 - h) );
 
+% calculates cost
 v=0;
 for i=1:m
     for k=1:num_labels
@@ -86,9 +88,9 @@ end
 
 J=(1/m) * v;
 
-%disp(size(Theta1,2));
-%disp(size(Theta2,2));
 
+
+% regularization
 v1=0;
 for j=1:size(Theta1,1)
     for k=2:size(Theta1,2)
@@ -105,23 +107,27 @@ end
 
 
 J = J + ( lambda/(2*m) ) * ( v1 + v2 );        
-
-grad=sum(((1/m) .* ( (h-y)' * X )));
-
+%grad=sum(((1/m) .* ( (h-y)' * X )));
 
 
 
+% Part 2: backpropagation
 
+% iterating over each training example
+for t=1:m
 
+    delta_3 = h(t,:)' - y(t,:)'; 
+    
+    bp_z2 = [1; Theta1 * X(t,:)']; 
+    delta_2 = Theta2' * delta_3 .* sigmoidGradient(bp_z2);
 
+    Theta1_grad = Theta1_grad + delta_2(2:end) * X(t,:); 
+    Theta2_grad = Theta2_grad + delta_3 * a2(t,:);
 
+end
 
-
-
-
-
-
-
+Theta1_grad=(1/m) * Theta1_grad;
+Theta2_grad=(1/m) * Theta2_grad;
 
 
 % -------------------------------------------------------------
