@@ -22,24 +22,21 @@ grad = zeros(size(theta));
 
 h=X*theta;
 
+% teta regularized
+theta_reg=[ 0; theta(2:end,:) ];
 
-% Calculate linear regression cost function
+
+% Calculate Regularized Linear Regression Cost Function
 
 J=(1/(2*m))*sum((h-y).^2);
 %printf('\nJ=%f',J);
 
-J=J+(lambda/(2*m))*sum(theta(2:end).^2);
+J=J+(lambda/(2*m))*sum(theta_reg.^2);
 %printf('\nRegularized J=%f',J);
 
 
-
-% Calculate linear regression gradient
-
-grad=(1/m)*((h-y)*X(1));
-disp(grad);
-grad=grad + ( (1/m)*sum( (h-y)'*X(2:end)) + (lambda/m)*theta(2:end) );
-%grad=grad+( (1/m)*((h-y)'*X(lambda/m)*theta(2:end));
-disp(grad);
+% Calculate regularized linear regression gradient
+grad=(1/m)*(X'*(h-y)+lambda* theta_reg );
 
 
 % =========================================================================
