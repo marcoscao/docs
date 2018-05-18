@@ -25,103 +25,31 @@ sigma = 0.3;
 
 
 values=[ 0.01 0.03 0.1 0.3 1 3 10 30];
-C=100000;
+old_pred_err=10000;
 
-%results = eye(64,3);
-%errorRow = 0;
 
-for C_n : length(values) %= [0.01 0.03 0.1 0.3 1, 3, 10 30]
-    for sigma_n : length(values) %test = [0.01 0.03 0.1 0.3 1, 3, 10 30]
-        %errorRow = errorRow + 1;
-        model = svmTrain(X, y, values(C_n), @(x1, x2) gaussianKernel(x1, x2, values(sigma_n)));
+for C_n =1: length(values) 
+
+    for sigma_n=1 : length(values) 
+        
+        c_tmp = values(C_n);
+        sigma_tmp = values(sigma_n);
+
+        model = svmTrain(X, y, c_tmp, @(x1, x2) gaussianKernel(x1, x2, sigma_tmp));
+
         predictions = svmPredict(model, Xval);
-        prediction_err = mean(double(predictions ~= yval));
+        pred_err = mean(double(predictions ~= yval));
 
-	if( prediction_err < C )
-		C = values(C_n);
-		sigma=values(sigma_n);
+        % printf('\n pred_err=%f   c_tmp=%f   sigma_tmp=%f',pred_err,c_tmp,sigma_tmp);
+
+	if( pred_err < old_pred_err )
+		C = c_tmp;
+		sigma=sigma_tmp;
+                old_pred_err=pred_err;
 	end
 
-        %results(errorRow,:) = [C_test, sigma_test, prediction_error];     
     end
 end
-
-%sorted_results = sortrows(results, 3); % sort matrix by column #3, the error, ascending
-
-%C = sorted_results(1,1);
-%sigma = sorted_results(1,2);
-
-
-
-
-
-
-
-
-
-%results = eye(64,3);
-%errorRow = 0;
-%
-%for C_test = [0.01 0.03 0.1 0.3 1, 3, 10 30]
-%    for sigma_test = [0.01 0.03 0.1 0.3 1, 3, 10 30]
-%        errorRow = errorRow + 1;
-%        model = svmTrain(X, y, C_test, @(x1, x2) gaussianKernel(x1, x2, sigma_test));
-%        predictions = svmPredict(model, Xval);
-%        prediction_error = mean(double(predictions ~= yval));
-%
-%        results(errorRow,:) = [C_test, sigma_test, prediction_error];     
-%    end
-%end
-%
-%sorted_results = sortrows(results, 3); % sort matrix by column #3, the error, ascending
-%
-%C = sorted_results(1,1);
-%sigma = sorted_results(1,2);
-
-
-
-
-
-
-
-
-
-%values=[ 0.01 0.03 0.1 0.3 1 3 10 30];
-%C=100000;
-%
-%for c_n=1:length(values)
-%	for sigma_n=1:length(values)
-%
-%		%m=svmTrain(X,y, values[c_n], @(x1,x2) gaussianKernel(X,y,values[sigma_n]) );
-%          model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
-%
-%                predictions= svmPredict(model,Xval);
-%		prediction=mean(double(predictions ~= yval ) );
-%		    fprintf('\n c_n=%d',c_n);
-%		if( prediction < C )
-%			%C = values[c_n];
-%			%sigma = values[sigma_n];
-%                end
-%	end
-%end
-
-
-
-
-%bestPrediction = 1000;
-%for C_i = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30]
-%  for sigma_i = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30]
-%    model= svmTrain(X, y, C_i, @(x1, x2) gaussianKernel(x1, x2, sigma_i));
-%    predictions = svmPredict(model, Xval);
-%    prediction = mean(double(predictions ~= yval));
-%    if prediction < bestPrediction;
-%      bestPrediction = prediction;
-%      C = C_i;
-%      sigma = sigma_i;
-%    end
-%  end
-%end
-
 
 
 
